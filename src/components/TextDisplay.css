@@ -1,0 +1,44 @@
+.text-display {
+  font-family: "Fira Code", monospace;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  word-break: break-word;
+}
+
+.char {
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+.correct {
+  color: var(--correct-color);
+}
+
+.incorrect {
+  color: var(--incorrect-color);
+  text-decoration: underline;
+  text-decoration-color: var(--incorrect-color);
+}
+
+.current {
+  border-left: 2px solid var(--primary-color);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-display {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}

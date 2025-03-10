@@ -1,0 +1,275 @@
+.results-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.trophy-icon {
+  font-size: 2rem;
+  color: gold;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+}
+
+.results-header h2 {
+  font-size: 2rem;
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.score-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.score-circle {
+  width: 150px;
+  height: 150px;
+}
+
+.circular-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.1);
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 3.8;
+  stroke: var(--primary-color);
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.percentage {
+  fill: var(--text-color);
+  font-size: 10px;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.performance-message {
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.results-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.action-button.reset {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.action-button.share {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.action-button.history {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-color);
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.history-container {
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.history-container h3 {
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.history-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.history-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.history-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.history-date {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.history-difficulty {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  color: var(--primary-color);
+}
+
+.history-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.history-stats span {
+  font-size: 0.9rem;
+}
+
+.no-history {
+  text-align: center;
+  color: var(--neutral-color);
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .results-container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .trophy-icon {
+    font-size: 1.5rem;
+  }
+
+  .results-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .score-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .performance-message {
+    font-size: 1.1rem;
+  }
+
+  .results-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .history-stats {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
